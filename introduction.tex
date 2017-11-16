@@ -1,0 +1,27 @@
+\chapter{INTRODUCTION}
+\label{sect:introduction}
+% - motivation and example: uncertainty in location and time.
+The availability of mobile devices with Global Positioning System (GPS) opened the gate for the research on moving objects. The GPS systems are able to tell what is the location of the moving object holding the mobile device. However, due to environmental and connection challenges, it is not guaranteed that the GPS sends an exact, accurate and certain location introducing location uncertainty challenges into play. Some scenarios require predictive queries, in which querying objects' future position is needed. In turn, this type of queries imposes an additional challenge, that is another dimension of uncertainty in time.
+
+%These predictive queries impose uncertainty in time, for example a user could query for number of objects available in a specific location after some time.
+
+% - quick survey on the existing work
+The current literature is able to overcome the moving object uncertainty by following one of two different approaches:
+\begin{itemize}
+\item \textbf{Indexing} \cite{Zhang09} assuming that the object's past location and velocities are unknown $B^x-tree$ is utilized to provide techniques that can find anticipated objects' locations
+in non-deterministic format.
+\item \textbf{Modeling} assuming that the object moving pattern is uncertain, Recursive Motion Function (RMF) can model such patterns in different shapes like ellipse, circle, etc...
+\end{itemize}
+
+% - what we propose: how to use it, what are new features, how it works, describe internal operations, describe controlling parameters.
+In this paper, we present a data structure called \pf used for querying moving objects and answering predictive queries under uncertainty. The benefit of using \pf is the ability to predict future steps for a moving object under time and location uncertainty. Given a road network (roads represent edges and intersections represent nodes), location uncertainty range (radius that describes the extent of location uncertainty), time range (integer value in seconds that describes for how long the \pf should predict) and probability threshold (to control the probability of nodes held in the \pf and ignore others below the threshold) the \pf provides prediction for the moving object steps. The \pf data structure offers two main operations $build$ to build an initial forest for the moving object without predicting any steps, and $update$ to predict what would be the next steps for the moving object along with probability assignment for each candidate node in the road network.
+
+% - hint about experimental evaluation
+The \pf prediction accuracy is compared with \tpr in the experiments which shows that \pf accuracy holds better than \tpr when the uncertainty increases by increasing the uncertain region radius.
+
+% - describe rest of the paper
+%In the rest of the paper, related work in the uncertainty literature is discussed then, \pf mechanics and algorithms are explained afterwards, we skim over the competitive algorithm \tpr and finally experiments and conclusion.
+
+In the rest of the paper, we discuss related work in the uncertainty literature. Then, we explain the underlying mechanics and algorithms of the \pf data structure. Later on, we go over one of the competing algorithms (\tpr) highlighting some of its important aspects. Afterwards, we list experiments employing \pf and their results. Finally, we finish with our conclusions.
+
+% - look at uncertainty paper Abdeltawab emailed and survey paper on his page

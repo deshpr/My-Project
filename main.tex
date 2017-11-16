@@ -1,0 +1,72 @@
+% This is LLNCS.DEM the demonstration file of
+% the LaTeX macro package from Springer-Verlag
+% for Lecture Notes in Computer Science,
+% version 2.3 for LaTeX2e
+%
+%\documentclass{llncs}
+\documentclass{IEEEtran}
+%
+\usepackage{makeidx}  % allows for indexgeneration
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{xspace}
+\usepackage{array}
+\usepackage{eqparbox}
+\usepackage{forest}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{pgfplots}
+\usepackage{color}
+
+\newcommand{\bug}
+    {\mbox{\rule{2mm}{2mm}}}
+\newcommand{\Bug}[1]
+    {\bug \footnote{BUG: {#1}}}
+\newcommand{\pf}{predictive forest\xspace}
+\newcommand{\PF}{Predictive Forest\xspace}
+\newcommand{\pt}{predictive tree\xspace}
+\newcommand{\PT}{Predictive Tree\xspace}
+\newcommand{\TPR}{Time-Parametrized R-Tree}
+\newcommand{\tpr}{time-parametrized r-tree}
+%\renewcommand\algorithmiccomment[1]{%
+%  \hfill//\ \eqparbox{COMMENT}{#1}%
+%}
+
+%
+\begin{document}
+%
+%\frontmatter          % for the preliminaries
+%
+%\pagestyle{headings}  % switches on printing of running heads
+%\addtocmark{Hamiltonian Mechanics} % additional mark in the TOC
+%
+
+\title{Predictive Forest: An Incredible Data Structure for Querying Moving Objects under Uncertainty}
+
+\author{
+{Abdeltawab M. Hendawi, Abdelrahman Elogeel, Rahul Deshpande, Mohamed Ali}
+\institute{Department of Computer Science and Engineering, University of Washington, Tacoma, WA 98402, USA}
+\email{hendawi@uw.edu, elogeel@uw.edu, deshpr@uw.edu, mhali@uw.edu}
+}
+
+\maketitle
+
+\begin{abstract}
+The current pose of the mobile devices help in reporting locations on their holders to open a brand new research opportunities. Yet, the provided locations will not always be precious as the network coverage stability is not granted. To answer a moving object predictive query, algorithms assuming uncertainty will probably hold relevant results more than certain ones. In this paper, we present \pf, a data structure for querying moving objects under uncertainty. We accuracy and scalability experiments over moving objects in Washington state and compare results with \tpr.
+\end{abstract}
+
+\input{introduction}
+
+\input{"related\space work"}
+
+\input{"predictive\space forest"}
+
+\input{evaluation}
+
+\input{conclusion}
+
+\bibliography{references}
+\bibliographystyle{abbrv}
+
+\end{document}
